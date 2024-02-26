@@ -1,5 +1,17 @@
 <template>
     <lightning-card title="Recent Leads" icon-name="standard:lead">
-       
+        <div class="slds-m-around_medium">
+            <template if:true={leads}>
+                <lightning-datatable
+                    key-field="Id"
+                    data={leads}
+                    columns={columns}
+                    hide-checkbox-column="true">
+                </lightning-datatable>
+            </template>
+<template if:true={error}>
+                <div class="slds-text-color_error">{error}</div>
+            </template>
+</div>
 </lightning-card>
 </template>
