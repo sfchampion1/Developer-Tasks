@@ -1,0 +1,15 @@
+<!-- recentLeads.html -->
+<template>
+    <lightning-card title="Recent Leads">
+        <template if:true={leads}>
+            <ul class="slds-list_dotted">
+                <template for:each={leads} for:item="lead">
+                    <li key={lead.Id}>{lead.Name}</li>
+                </template>
+</ul>
+</template>
+<template if:true={error}>
+            <div class="slds-text-color_error">{error}</div>
+        </template>
+</lightning-card>
+</template>
